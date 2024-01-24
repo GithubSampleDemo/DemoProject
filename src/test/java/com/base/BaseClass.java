@@ -13,7 +13,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	
 
-	public  WebDriver launchBrowser(String browserName, String urlOfWebsite) {
+	public static WebDriver launchBrowser(String browserName, String urlOfWebsite) {
 		if(browserName.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
 		}
@@ -32,25 +32,25 @@ public class BaseClass {
 		return driver;
 	}
 
-	public  void putValueInTextBox(WebElement element, String value) {
+	public static void putValueInTextBox(WebElement element, String value) {
 		if (element.isDisplayed() && element.isEnabled()) {
 			element.clear();
 			element.sendKeys(value);
 		}
 	}
 
-	public  void clickOnElement(WebElement element) {
+	public static void clickOnElement(WebElement element) {
 		if (element.isDisplayed() && element.isEnabled()) {
 			element.click();
 		}
 	}
 
-	public  void closeBrowser() {
+	public static void closeBrowser() {
 		driver.quit();
 	}
 
 	
-	public  String getTitleOfPage() {
+	public static String getTitleOfPage() {
 		 return driver.getTitle();
 	}
 }
